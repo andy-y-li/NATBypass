@@ -149,7 +149,7 @@ func port2port(port1 string, port2 string) {
 			time.Sleep(timeout * time.Second)
 			continue
 		}
-		forward(conn1, conn2)
+		go forward(conn1, conn2)
 	}
 }
 
@@ -203,7 +203,7 @@ func host2host(address1, address2 string) {
 				time.Sleep(timeout * time.Second)
 			}
 		}
-		forward(host1, host2)
+		go forward(host1, host2)
 	}
 }
 
